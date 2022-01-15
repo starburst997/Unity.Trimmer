@@ -3,7 +3,7 @@ Reduce size of unity asset bundled by default
 
 Unity include a file by default called `unity_default_resources` which includes a bunch of unnecessary assets.
 
-There is no easy way to remove it and it doesn't seems like the build process attempts to remove unnecessary assets from it either, so the file is simply copied as is... All 3.36MB (WebGL) of it... Which is kind of a lot for web games.
+There is no easy way to remove it and it doesn't seems like the build process attempts to remove unnecessary assets from it either, so the file is simply copied as is... All 3.36MB (WebGL / 2021.1.28f1) of it... Which is kind of a lot for web games.
 
 For example, a 2048x1024 2MB Texture called "UnitySplash-cube" is include in it, the default unity splash screen, even if you overwrite it in Project Setting.
 
