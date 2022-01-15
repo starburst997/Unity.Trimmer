@@ -18,8 +18,9 @@ namespace unity.trimmer.cli
             trimCommand.AddAlias("n");
             trimCommand.AddArgument(new Argument<string>("input"));
             trimCommand.AddArgument(new Argument<string>("output"));
-            trimCommand.AddOption(new Option<string>(new []{"--classdata", "--c"}, () => "./classdata.tpk", "'classdata.tpk' file path"));
-            trimCommand.Handler = CommandHandler.Create<string, string, string>(Trim.Execute);
+            trimCommand.AddOption(new Option<string>(new []{"--classdata", "--c"}, () => "", "'classdata.tpk' file path"));
+            trimCommand.AddOption(new Option<string>(new []{"--font", "--f"}, () => "", "Empty font file path"));
+            trimCommand.Handler = CommandHandler.Create<string, string, string, string>(Trim.Execute);
             rootCommand.AddCommand(trimCommand);
             
             // Version
