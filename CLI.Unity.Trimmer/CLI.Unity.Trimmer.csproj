@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <RootNamespace>Unity.Trimmer.Cli</RootNamespace>
+        <IsPackable>false</IsPackable>
+        <RuntimeIdentifiers>win-x64;linux-x64;osx-x64</RuntimeIdentifiers>
+        <Configurations>Debug;Release</Configurations>
+        <Platforms>AnyCPU</Platforms>
+        <AssemblyVersion>2022.0</AssemblyVersion>
+        <PackageVersion>2022.0</PackageVersion>
+        <FileVersion>2022.0</FileVersion>
+        <ProductVersion>2022.0</ProductVersion>
+        <Version>2022.0</Version>
+        <TargetFramework>net6.0</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+      <DebugType>portable</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Dependencies\AssetsTools.NET\AssetTools.NET\AssetsTools.NET.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="publish-linux\**" />
+        <None Remove="publish-win\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.CommandLine">
+        <Version>2.0.0-beta1.20574.7</Version>
+      </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="publish-linux\**" />
+      <Compile Remove="publish-win\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="publish-linux\**" />
+      <EmbeddedResource Remove="publish-win\**" />
+    </ItemGroup>
+
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <!--<Exec Command="dotnet restore" />-->
+    </Target>
+    
+</Project>

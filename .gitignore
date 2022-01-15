@@ -1,0 +1,16 @@
+build
+logs/
+.vs/
+.gradle/
+.DS_Store
+DevAuthToken.txt*
+*.user
+
+[Tt]emp/
+Logs/
+[Oo]bj/
+[Bb]in/
+[Pp]ublish/
+[Bb]inMono/
+
+unity_default_resources

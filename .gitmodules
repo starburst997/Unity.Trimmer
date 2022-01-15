@@ -1,0 +1,3 @@
+[submodule "Dependencies/AssetsTools.NET"]
+	path = Dependencies/AssetsTools.NET
+	url = git@github.com:starburst997/AssetsTools.NET.git
